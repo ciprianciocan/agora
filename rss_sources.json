@@ -1,0 +1,97 @@
+{
+    "sources": [
+        {
+            "id": 1,
+            "name": "PressOne",
+            "website_url": "https://pressone.ro",
+            "rss_feed_url": "https://pressone.ro/api/rss",
+            "description": "A trusted source for independent journalism in Romania."
+        },
+        {
+            "id": 2,
+            "name": "G4Media",
+            "website_url": "https://g4media.ro",
+            "rss_feed_url": "https://g4media.ro/feed",
+            "description": "Independent news platform covering Romanian and international current events."
+        },
+        {
+            "id": 3,
+            "name": "SpotMedia",
+            "website_url": "https://spotmedia.ro",
+            "rss_feed_url": "https://spotmedia.ro/rss",
+            "description": "Provides news, analyses, and interviews on various topics relevant to Romania."
+        },
+        {
+            "id": 4,
+            "name": "Scena9",
+            "website_url": "https://scena9.ro",
+            "rss_feed_url": "https://scena9.ro/feed",
+            "description": "Cultural magazine focusing on contemporary Romanian arts and society."
+        },
+        {
+            "id": 5,
+            "name": "Mindcraft Stories",
+            "website_url": "https://mindcraftstories.ro",
+            "rss_feed_url": "https://mindcraftstories.ro/feed",
+            "description": "Explores the intersection of science, technology, and culture in Romania."
+        },
+        {
+            "id": 6,
+            "name": "RFI România",
+            "rss_feed_url": "https://www.rfi.ro/rss",
+            "website_url": "https://www.rfi.ro/",
+            "description": "Offers global and local perspectives on news, culture, and politics."
+          },
+          {
+            "id": 7,
+            "name": "HotNews",
+            "rss_feed_url": "https://www.hotnews.ro/rss",
+            "website_url": "https://www.hotnews.ro/",
+            "description": "Comprehensive coverage of current events, politics, and economy."
+          },
+          {
+            "id": 8,
+            "name": "Snoop.ro",
+            "rss_feed_url": "https://www.snoop.ro/rss",
+            "website_url": "https://www.snoop.ro/",
+            "description": "Provides fact-checking and debunking of fake news."
+          },
+          {
+            "id": 9,
+            "name": "Rise Project",
+            "rss_feed_url": "https://www.riseproject.ro/feed/",
+            "website_url": "https://www.riseproject.ro/",
+            "description": "Investigative journalism focused on corruption, politics, and organized crime."
+          },
+         
+          {
+            "id": 12,
+            "name": "Buletin de București",
+            "rss_feed_url": "https://buletin.de/bucuresti/feed/",
+            "website_url": "https://buletin.de/bucuresti/",
+            "description": "Investigative journalism focused on Bucharest’s local issues."
+          },
+  
+          {
+            "id": 14,
+            "name": "Edupedu",
+            "rss_feed_url": "https://www.edupedu.ro/feed/",
+            "website_url": "https://www.edupedu.ro/",
+            "description": "Education-focused news, policies, and insights."
+          },
+          {
+            "id": 15,
+            "name": "Recorder",
+            "rss_feed_url": "https://recorder.ro/feed/",
+            "website_url": "https://recorder.ro/",
+            "description": "Investigative and documentary-style reporting on societal issues."
+          },
+          {
+            "id": 16,
+            "name": "Public Record",
+            "rss_feed_url": "https://publicrecord.ro/feed/",
+            "website_url": "https://publicrecord.ro/",
+            "description": "Independent newsroom dedicated to public interest journalism."
+          }
+    ]
+}
