@@ -21,6 +21,9 @@ import ArticleCard from '@/components/ArticleCard';
 import { fetchRssSources, fetchRssFeed } from '@/utils/rssFetcher';
 import { getFromStorage } from '@/utils/storage';
 
+console.log('VUE_APP_USE_PROXY:', process.env.VUE_APP_USE_PROXY);
+console.log('VUE_APP_PROXY_URL:', process.env.VUE_APP_PROXY_URL);
+
 export default {
   name: 'RssFeed',
   components: { SourceSelector, ArticleCard },
