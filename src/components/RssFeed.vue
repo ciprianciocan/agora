@@ -37,12 +37,13 @@ export default {
   },
 async mounted() {
   const storedSources = getFromStorage('selectedSources', []);
+  const sourcesUrl = `${process.env.BASE_URL}rss_sources.json`;
   console.log('Retrieved selected sources from storage:', storedSources);
 
   //this.selectedSources = storedSources;
   this.selectedSources = storedSources.length ? storedSources : this.allSources.map(s => s.id);
   try {
-    this.allSources = await fetchRssSources('/rss_sources.json');
+    this.allSources = await fetchRssSources(sourcesUrl);
     console.log('All sources:', this.allSources);
 
     const defaultSources = this.allSources.map(s => s.id);
