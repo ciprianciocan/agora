@@ -16,5 +16,7 @@ module.exports = {
     plugins: [
       new NodePolyfillPlugin(),
     ],
+    
   },
+  publicPath: '/agora/',
 };
