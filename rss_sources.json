@@ -29,13 +29,6 @@
             "description": "Cultural magazine focusing on contemporary Romanian arts and society."
         },
         {
-            "id": 5,
-            "name": "Mindcraft Stories",
-            "website_url": "https://mindcraftstories.ro",
-            "rss_feed_url": "https://mindcraftstories.ro/feed",
-            "description": "Explores the intersection of science, technology, and culture in Romania."
-        },
-        {
             "id": 6,
             "name": "RFI România",
             "rss_feed_url": "https://www.rfi.ro/rss",
