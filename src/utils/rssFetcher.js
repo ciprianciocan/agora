@@ -18,7 +18,7 @@ export async function fetchRssFeed(proxyUrl, source) {
   try {
     // Use proxy if provided; otherwise fetch directly
     const rssUrl = proxyUrl ? `${proxyUrl}${source.rss_feed_url.trim()}` : source.rss_feed_url.trim();
-    console.log('Fetching RSS feed from:', rssUrl);
+    console.log('Fetching RSS feed from:', rssUrl); // Confirm the URL is correct
 
     const feedResponse = await fetch(rssUrl);
     const feedData = await feedResponse.text();

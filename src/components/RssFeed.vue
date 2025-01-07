@@ -23,6 +23,7 @@ import { getFromStorage } from '@/utils/storage';
 
 console.log('VUE_APP_USE_PROXY:', process.env.VUE_APP_USE_PROXY);
 console.log('VUE_APP_PROXY_URL:', process.env.VUE_APP_PROXY_URL);
+console.log('NODE_ENV:', process.env.NODE_ENV);
 
 export default {
   name: 'RssFeed',
@@ -42,6 +43,8 @@ async mounted() {
   const storedSources = getFromStorage('selectedSources', []);
   const sourcesUrl = `${process.env.BASE_URL}rss_sources.json`;
   console.log('Retrieved selected sources from storage:', storedSources);
+  console.log('Proxy URL in mounted:', this.proxyUrl); // Should be an empty string
+
 
   //this.selectedSources = storedSources;
   this.selectedSources = storedSources.length ? storedSources : this.allSources.map(s => s.id);
@@ -58,6 +61,7 @@ async mounted() {
 },
   methods: {
     async filterSources(selectedSourceIds) {
+      console.log('Proxy URL in filterSources:', this.proxyUrl);
       this.loading = true;
       this.error = null;
       this.articles = [];
