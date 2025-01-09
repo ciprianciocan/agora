@@ -40,8 +40,8 @@ export default {
     };
   },
 async mounted() {
+  
   const storedSources = getFromStorage('selectedSources', []);
-  const sourcesUrl = `${process.env.BASE_URL}rss_sources.json`;
   console.log('Retrieved selected sources from storage:', storedSources);
   console.log('Proxy URL in mounted:', this.proxyUrl); // Should be an empty string
 
@@ -56,7 +56,8 @@ async mounted() {
 
 
   try {
-    this.allSources = await fetchRssSources(sourcesUrl);
+    const apiUrl = process.env.VUE_APP_API_BASE_URL; // Use your backend's base URL
+    this.allSources = await fetchRssSources(apiUrl); // Fetch sources from the backend
     console.log('All sources:', this.allSources);
 
     const defaultSources = this.allSources.map(s => s.id);

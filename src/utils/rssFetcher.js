@@ -2,12 +2,12 @@ import Parser from 'rss-parser';
 
 const parser = new Parser();
 
-export async function fetchRssSources(sourcesUrl) {
+export async function fetchRssSources(apiUrl) {
   try {
-    const response = await fetch(sourcesUrl);
+    const response = await fetch(`${apiUrl}/api/sources`);
     const data = await response.json();
-    console.log('Fetched sources:', data.sources); // Log fetched sources for debugging
-    return data.sources;
+    console.log('Fetched sources from API:', data); // Debugging
+    return data;
   } catch (error) {
     console.error('Error fetching RSS sources:', error);
     throw error;
