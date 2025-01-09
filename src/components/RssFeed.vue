@@ -45,9 +45,16 @@ async mounted() {
   console.log('Retrieved selected sources from storage:', storedSources);
   console.log('Proxy URL in mounted:', this.proxyUrl); // Should be an empty string
 
-
   //this.selectedSources = storedSources;
   this.selectedSources = storedSources.length ? storedSources : this.allSources.map(s => s.id);
+
+
+   // If no stored sources, select only the first source by default
+    this.selectedSources = storedSources.length
+      ? storedSources
+      : [this.allSources[0]?.id]; // Select only the first source
+
+
   try {
     this.allSources = await fetchRssSources(sourcesUrl);
     console.log('All sources:', this.allSources);
@@ -61,23 +68,24 @@ async mounted() {
 },
   methods: {
     async filterSources(selectedSourceIds) {
-      console.log('Proxy URL in filterSources:', this.proxyUrl);
-      this.loading = true;
-      this.error = null;
-      this.articles = [];
-      try {
-        const selectedSources = this.allSources.filter(source => selectedSourceIds.includes(source.id));
-        for (const source of selectedSources) {
-          const items = await fetchRssFeed('http://192.168.0.105:8081/', source);
-          this.articles = [...this.articles, ...items.slice(0, 3)]; // Limit to 3 items per source
-        }
-      } catch (error) {
-        console.error('Error filtering sources:', error);
-        this.error = 'Failed to load articles. Please try again later.';
-      } finally {
-        this.loading = false;
-      }
-    },
+  console.log('Proxy URL in filterSources:', this.proxyUrl); // Log to verify correct value
+  this.loading = true;
+  this.error = null;
+  this.articles = [];
+  try {
+    const selectedSources = this.allSources.filter(source => selectedSourceIds.includes(source.id));
+    for (const source of selectedSources) {
+      const items = await fetchRssFeed(this.proxyUrl, source); // Use dynamic proxyUrl
+      this.articles = [...this.articles, ...items.slice(0, 3)]; // Limit to 3 items per source
+    }
+  } catch (error) {
+    console.error('Error filtering sources:', error);
+    this.error = 'Failed to load articles. Please try again later.';
+  } finally {
+    this.loading = false;
+  }
+}
+,
      checkLocalStorage() {
     const storedSources = localStorage.getItem('selectedSources');
     alert(`Selected Sources: ${storedSources}`);
